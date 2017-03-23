@@ -1,0 +1,31 @@
+2017-13-23 12:03:39  INFO ContextLoader:307 - Root WebApplicationContext: initialization started
+2017-13-23 12:03:39  INFO XmlWebApplicationContext:578 - Refreshing Root WebApplicationContext: startup date [Thu Mar 23 12:13:39 GMT+08:00 2017]; root of context hierarchy
+2017-13-23 12:03:39  INFO XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [spring-mybatis.xml]
+2017-13-23 12:03:40  WARN ClassPathMapperScanner:158 - No MyBatis mapper was found in '[com.imut.journal.dao.impl]' package. Please check your configuration.
+2017-13-23 12:03:40  INFO PropertyPlaceholderConfigurer:172 - Loading properties file from class path resource [jdbc.properties]
+2017-13-23 12:03:40  INFO AutowiredAnnotationBeanPostProcessor:153 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-13-23 12:03:40  INFO DruidDataSource:669 - {dataSource-1} inited
+2017-13-23 12:03:40  INFO ContextLoader:347 - Root WebApplicationContext: initialization completed in 678 ms
+2017-13-23 12:03:40  INFO DispatcherServlet:489 - FrameworkServlet 'SpringMVC': initialization started
+2017-13-23 12:03:40  INFO XmlWebApplicationContext:578 - Refreshing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Thu Mar 23 12:13:40 GMT+08:00 2017]; parent: Root WebApplicationContext
+2017-13-23 12:03:40  INFO XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [spring-mvc.xml]
+2017-13-23 12:03:40  INFO AutowiredAnnotationBeanPostProcessor:153 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-13-23 12:03:40  INFO RequestMappingHandlerAdapter:532 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Thu Mar 23 12:13:40 GMT+08:00 2017]; parent: Root WebApplicationContext
+2017-13-23 12:03:40  INFO RequestMappingHandlerAdapter:532 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Thu Mar 23 12:13:40 GMT+08:00 2017]; parent: Root WebApplicationContext
+2017-13-23 12:03:41  INFO DispatcherServlet:508 - FrameworkServlet 'SpringMVC': initialization completed in 654 ms
+2017-36-23 12:03:56  INFO ContextLoader:307 - Root WebApplicationContext: initialization started
+2017-36-23 12:03:56  INFO XmlWebApplicationContext:578 - Refreshing Root WebApplicationContext: startup date [Thu Mar 23 12:36:56 GMT+08:00 2017]; root of context hierarchy
+2017-36-23 12:03:56  INFO XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [spring-mybatis.xml]
+2017-36-23 12:03:56  WARN ClassPathMapperScanner:158 - No MyBatis mapper was found in '[com.imut.journal.dao.impl]' package. Please check your configuration.
+2017-36-23 12:03:56  INFO PropertyPlaceholderConfigurer:172 - Loading properties file from class path resource [jdbc.properties]
+2017-36-23 12:03:56  INFO AutowiredAnnotationBeanPostProcessor:153 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-36-23 12:03:56  INFO DruidDataSource:669 - {dataSource-1} inited
+2017-36-23 12:03:57  INFO ContextLoader:347 - Root WebApplicationContext: initialization completed in 926 ms
+2017-36-23 12:03:57  INFO DispatcherServlet:489 - FrameworkServlet 'SpringMVC': initialization started
+2017-36-23 12:03:57  INFO XmlWebApplicationContext:578 - Refreshing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Thu Mar 23 12:36:57 GMT+08:00 2017]; parent: Root WebApplicationContext
+2017-36-23 12:03:57  INFO XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [spring-mvc.xml]
+2017-36-23 12:03:57  INFO AutowiredAnnotationBeanPostProcessor:153 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-36-23 12:03:58  INFO Version:27 - HV000001: Hibernate Validator 5.1.2.Final
+2017-36-23 12:03:58  INFO RequestMappingHandlerAdapter:532 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Thu Mar 23 12:36:57 GMT+08:00 2017]; parent: Root WebApplicationContext
+2017-36-23 12:03:58  INFO RequestMappingHandlerAdapter:532 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Thu Mar 23 12:36:57 GMT+08:00 2017]; parent: Root WebApplicationContext
+2017-36-23 12:03:58  INFO DispatcherServlet:508 - FrameworkServlet 'SpringMVC': initialization completed in 814 ms

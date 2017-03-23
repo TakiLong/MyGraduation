@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
+<fullyQualifiedTypeName name="com.hcycom.vegetables.dao.UsersMapper"/>
+<fullyQualifiedTypeName name="com.hcycom.vegetables.entity.Result"/>
+<fullyQualifiedTypeName name="com.hcycom.vegetables.entity.User"/>
+<fullyQualifiedTypeName name="com.hcycom.vegetables.service.UserService"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="com.imut.journal.dao.UserMapper"/>
+<fullyQualifiedTypeName name="com.imut.journal.entity.User"/>
+</qualifiedTypeNameHistroy>

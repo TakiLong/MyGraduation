@@ -1,0 +1,159 @@
+<!-- --------------确认删除模态框-------------- -->
+	<!-- start: DYNAMIC TABLE -->
+	<div class="container-fluid container-fullw bg-white" ng-controller="user_listCtrl">
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-5">
+				<form>
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Search..."
+							ng-model="filter.$"> <span class="input-group-btn">
+							<button class="btn btn-primary" type="button">
+								<i class="fa fa-search"></i>
+							</button>
+						</span>
+					</div>
+				</form>
+
+			</div>
+			<div class="col-md-2">
+			</div>
+			<div class="col-md-1">
+				<!-- <button type="button" ui-sref="app.user_add" ng-click="add()" class="btn  btn-primary "> -->
+				<button type="button" ng-click="add()" class="btn  btn-primary ">
+					<i style="font-size: 12px;" class="glyphicon glyphicon-plus"></i>&nbsp;新增
+				</button>
+			</div>
+			
+<!-- 新增用户模态框 -->	
+<div class="modal fade" id="myModal_add" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="width:40%">
+   <div class="modal-content">
+     <div class="modal-header">
+       <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+       <h4 class="modal-title" id="myModalLabe">添加用户</h4>
+     </div>
+     <div class="modal-body" >
+     	
+     	<label style="width: 100%"><font color="red">*</font>用户名</label>
+		<input style="width: 100%" type="text" data-ng-model="addData.loginName"/>
+		<label style="width: 100%"><font color="red">*</font>用户真实姓名</label>
+		<input style="width: 100%" type="text" data-ng-model="addData.userNameCn"/>
+		<label style="width: 100%"><font color="red">*</font>用户登录密码</label>
+		<input style="width: 100%" type="text" data-ng-model="addData.loginPasswd"/>
+		<label style="width: 100%"><font color="red">*</font>用户手机号</label>
+		<input style="width: 100%" type="text" data-ng-model="addData.userMobile"/>
+		<label style="width: 100%">用户微信号</label>
+		<input style="width: 100%" type="text" data-ng-model="addData.userWeixin"/>
+		<label style="width: 100%"><font color="red">*</font>用户邮箱</label>
+		<input style="width: 100%" type="text" data-ng-model="addData.userEmail"/>
+		<label style="width: 100%"><font color="red">*</font>用户地址 1</label>
+		<input style="width: 100%" type="text" data-ng-model="addData.userAddressOne"/>
+		<label style="width: 100%">用户地址 2</label>
+		<input style="width: 100%" type="text" data-ng-model="addData.userAddressTwo"/>
+		<label style="width: 100%"><font color="red">*</font>用户级别</label>
+		<input style="width: 100%" type="text" data-ng-model="addData.userLevel"/>
+		<label style="width: 100%">用户渠道</label>
+		<input style="width: 100%" type="text" data-ng-model="addData.userChannel"/>
+		<label style="width: 100%"><font color="red">*</font>用户卡总额</label>
+		<input style="width: 100%" type="text" data-ng-model="addData.totalPrice"/>
+		<label style="width: 100%"><font color="red">*</font>用户卡余额</label>
+		<input style="width: 100%" type="text" data-ng-model="addData.remainPrice"/>
+		<label style="width: 100%">备注</label>
+		<input style="width: 100%" type="text" data-ng-model="addData.remarks"/>
+		
+     </div>
+     <div align="center"><font color="red">*&nbsp;为必填项</font></div>
+     <div class="modal-footer">
+       <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+       <button type="button" class="btn btn-primary" ng-click="save()">添加</button>
+     </div>
+
+     </div>
+   </div>
+</div>
+<!-- end:新增用户模态框结束 -->			
+		
+			<div class="col-md-1">
+				<button type="button" class="btn  btn-primary" id="delBtn" ng-click="del()"><!-- ng-click="del()" -->
+					<i style="font-size: 12px;" class="glyphicon glyphicon-trash"></i>&nbsp;删除
+				</button>
+			</div>
+			
+<!-- 信息删除确认模态框 -->  
+<div class="modal fade" id="delcfmModel">  
+  <div class="modal-dialog">  
+    <div class="modal-content message_align">  
+      <div class="modal-header">  
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>  
+        <h4 class="modal-title">提示信息</h4>  
+      </div>  
+      <div class="modal-body">  
+        <p>您确认要删除吗？</p>  
+      </div>  
+      <div class="modal-footer">  
+         <input type="hidden" id="url"/>  
+         <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>  
+         <a ng-click="delSubmit()" class="btn btn-primary" data-dismiss="modal">确定</a>  
+      </div>  
+    </div><!-- /.modal-content -->  
+  </div><!-- /.modal-dialog -->  
+</div><!-- /.modal --> 	
+<!-- end:信息删除确认模态框结束 --> 
+
+<!-- 修改用户模态框 -->	
+<div class="modal fade" id="myModal_edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="width:40%">
+   <div class="modal-content">
+     <div class="modal-header">
+       <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+       <h4 class="modal-title" id="myModalLabel">添加用户</h4>
+     </div>
+     <div class="modal-body" >
+     	
+     	<label style="width: 100%"><font color="red">*</font>用户名</label>
+		<input style="width: 100%" type="text" id="loginname" data-ng-model="addData.loginName"  name="loginname"/>
+		<label style="width: 100%"><font color="red">*</font>用户真实姓名</label>
+		<input style="width: 100%" type="text" id="usernamecn" data-ng-model="addData.userNameCn"  name="usernamecn"/>
+		<label style="width: 100%"><font color="red">*</font>用户登录密码</label>
+		<input style="width: 100%" type="text" id="loginpasswd" data-ng-model="addData.loginPasswd"  name="loginpasswd"/>
+		<label style="width: 100%"><font color="red">*</font>用户手机号</label>
+		<input style="width: 100%" type="text" id="usermobile" data-ng-model="addData.userMobile"  name="usermobile"/>
+		<label style="width: 100%">用户微信号</label>
+		<input style="width: 100%" type="text" id="userweixin" data-ng-model="addData.userWeixin"  name="userweixin"/>
+		<label style="width: 100%"><font color="red">*</font>用户邮箱</label>
+		<input style="width: 100%" type="text" id="useremail" data-ng-model="addData.userEmail"  name="useremail"/>
+		<label style="width: 100%"><font color="red">*</font>用户地址 1</label>
+		<input style="width: 100%" type="text" id="useraddressone" data-ng-model="addData.userAddressOne"  name="useraddressone"/>
+		<label style="width: 100%">用户地址 2</label>
+		<input style="width: 100%" type="text" id="useraddresstwo" data-ng-model="addData.userAddressTwo"  name="useraddresstwo"/>
+		<label style="width: 100%"><font color="red">*</font>用户级别</label>
+		<input style="width: 100%" type="text" id="userlevel" data-ng-model="addData.userLevel"  name="userlevel"/>
+		<label style="width: 100%">用户渠道</label>
+		<input style="width: 100%" type="text" id="userchannel" data-ng-model="addData.userChannel"  name="userchannel"/>
+		<label style="width: 100%"><font color="red">*</font>用户卡总额</label>
+		<input style="width: 100%" type="text" id="totalprice" data-ng-model="addData.totalPrice"  name="totalprice"/>
+		<label style="width: 100%"><font color="red">*</font>用户卡余额</label>
+		<input style="width: 100%" type="text" id="remainprice" data-ng-model="addData.remainPrice"  name="remainprice"/>
+		<label style="width: 100%">备注</label>
+		<input style="width: 100%" type="text" id="remarks" data-ng-model="addData.remarks"  name="remarks"/>
+		
+     </div>
+     <div align="center"><font color="red">*&nbsp;为必填项</font></div>
+     <div class="modal-footer">
+       <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+       <button type="button" class="btn btn-primary" ng-click="update()">修改</button>
+     </div>
+
+     </div>
+   </div>
+</div>
+<!-- end:修改用户模态框结束 -->
+		</div>
+		<div class="row">
+			
+			<div ui-grid="gridOptions1" id="tab" class="grid" ui-grid-edit ui-grid-pagination 
+        ui-grid-selection ui-grid-exporter ui-grid-resize-columns ui-grid-auto-resize></div>
+		</div>
+	</div>
+	<!-- end: DYNAMIC TABLE -->

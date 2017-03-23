@@ -1,0 +1,17 @@
+1480925867816	Rename package 'com.hcycom.vegetables.base'
+1480925893018	Rename package 'com.hcycom.vegetables.dao'
+1480925901353	Rename package 'com.hcycom.vegetables.entity'
+1480925908006	Rename package 'com.hcycom.vegetables.filter'
+1480925914475	Rename package 'com.hcycom.vegetables.rest'
+1480925920579	Rename package 'com.hcycom.vegetables.service'
+1480925927112	Rename package 'com.hcycom.vegetables.service.impl'
+1480925937118	Rename package 'com.hcycom.vegetables.util'
+1480929004961	Rename type 'User'
+1480929011400	Rename resource 'UserMapper.xml'
+1480929062354	Rename type 'UserMapper'
+1480929153171	Delete elements
+1480929591733	Delete element
+1481096736902	Delete elements
+1481096773723	Delete element
+1481096775824	Delete element
+1481096781877	Delete element
