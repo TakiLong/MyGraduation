@@ -6,8 +6,7 @@
     <result column="user_loginname" property="userLoginname" jdbcType="VARCHAR" />
     <result column="user_passwd" property="userPasswd" jdbcType="VARCHAR" />
     <result column="user_realname" property="userRealname" jdbcType="VARCHAR" />
-    <result column="user_penname" property="userPenname" jdbcType="VARCHAR" />
-    <result column="user_sex" property="userSex" jdbcType="INTEGER" />
+    <result column="user_sex" property="userSex" jdbcType="VARCHAR" />
     <result column="user_birth" property="userBirth" jdbcType="DATE" />
     <result column="user_phone" property="userPhone" jdbcType="VARCHAR" />
     <result column="user_address" property="userAddress" jdbcType="VARCHAR" />
@@ -16,13 +15,14 @@
     <result column="user_roll" property="userRoll" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Base_Column_List" >
-    user_id, user_loginname, user_passwd, user_realname, user_penname, user_sex, user_birth, 
+    user_id, user_loginname, user_passwd, user_realname, user_sex, user_birth, 
     user_phone, user_address, user_email, user_remark, user_roll
   </sql>
   
    <!-- 登录验证 -->
   <select id="checkLogin" parameterType="com.imut.journal.entity.User" resultMap="BaseResultMap">
-    select user_loginname,user_passwd
+    select 
+    <include refid="Base_Column_List" />
     from joss_user where user_loginname =  #{userLoginname,jdbcType=VARCHAR} 
     and user_passwd = #{userPasswd,jdbcType=VARCHAR}
   </select>
@@ -45,7 +45,7 @@
   </delete>
   <insert id="insert" parameterType="com.imut.journal.entity.User" >
     insert into joss_user (user_id, user_loginname, user_passwd, 
-      user_realname, user_penname, user_sex, 
+      user_realname, user_sex, 
       user_birth, user_phone, user_address, 
       user_email, user_remark, user_roll
       )
@@ -69,9 +69,6 @@
       </if>
       <if test="userRealname != null" >
         user_realname,
-      </if>
-      <if test="userPenname != null" >
-        user_penname,
       </if>
       <if test="userSex != null" >
         user_sex,
@@ -146,11 +143,8 @@
       <if test="userRealname != null" >
         user_realname = #{userRealname,jdbcType=VARCHAR},
       </if>
-      <if test="userPenname != null" >
-        user_penname = #{userPenname,jdbcType=VARCHAR},
-      </if>
       <if test="userSex != null" >
-        user_sex = #{userSex,jdbcType=INTEGER},
+        user_sex = #{userSex,jdbcType=VARCHAR},
       </if>
       <if test="userBirth != null" >
         user_birth = #{userBirth,jdbcType=DATE},
@@ -178,8 +172,7 @@
     set user_loginname = #{userLoginname,jdbcType=VARCHAR},
       user_passwd = #{userPasswd,jdbcType=VARCHAR},
       user_realname = #{userRealname,jdbcType=VARCHAR},
-      user_penname = #{userPenname,jdbcType=VARCHAR},
-      user_sex = #{userSex,jdbcType=INTEGER},
+      user_sex = #{userSex,jdbcType=VARCHAR},
       user_birth = #{userBirth,jdbcType=DATE},
       user_phone = #{userPhone,jdbcType=VARCHAR},
       user_address = #{userAddress,jdbcType=VARCHAR},

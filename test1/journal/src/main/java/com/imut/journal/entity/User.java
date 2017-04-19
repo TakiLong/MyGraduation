@@ -11,9 +11,7 @@ public class User {
 
     private String userRealname;
 
-    private String userPenname;
-
-    private Integer userSex;
+    private String userSex;
 
     private Date userBirth;
 
@@ -59,19 +57,11 @@ public class User {
         this.userRealname = userRealname == null ? null : userRealname.trim();
     }
 
-    public String getUserPenname() {
-        return userPenname;
-    }
-
-    public void setUserPenname(String userPenname) {
-        this.userPenname = userPenname == null ? null : userPenname.trim();
-    }
-
-    public Integer getUserSex() {
+    public String getUserSex() {
         return userSex;
     }
 
-    public void setUserSex(Integer userSex) {
+    public void setUserSex(String userSex) {
         this.userSex = userSex;
     }
 
@@ -122,4 +112,13 @@ public class User {
     public void setUserRoll(Integer userRoll) {
         this.userRoll = userRoll;
     }
+
+	@Override
+	public String toString() {
+		return "User [userId=" + userId + ", userLoginname=" + userLoginname + ", userPasswd=" + userPasswd
+				+ ", userRealname=" + userRealname + ", userSex=" + userSex + ", userBirth=" + userBirth
+				+ ", userPhone=" + userPhone + ", userAddress=" + userAddress + ", userEmail=" + userEmail
+				+ ", userRemark=" + userRemark + ", userRoll=" + userRoll + "]";
+	}
+    
 }

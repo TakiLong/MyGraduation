@@ -1,7 +1,6 @@
 package com.imut.journal.rest;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -18,8 +17,6 @@ import com.imut.journal.entity.Result;
 import com.imut.journal.entity.User;
 import com.imut.journal.service.UserService;
 
-
-
 @Component
 @Path("/user") 
 public class UserResource {
@@ -31,7 +28,7 @@ public class UserResource {
 	@Path("/login")  
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	@Produces(MediaType.APPLICATION_JSON)
-	public Result login(@FormParam(value="loginname") String loginName,@FormParam(value="password") String loginPasswd) throws Exception {
+	public Result login(@FormParam(value="loginname") String loginName,@FormParam(value="password") String loginPasswd) {
 		//验证用户名和密码
 		System.out.println(loginName+" === "+loginPasswd);
 		User u = new User();
@@ -56,14 +53,14 @@ public class UserResource {
 	@Path("all_list")  
 	@Produces(MediaType.APPLICATION_JSON)
 	public Result getAll() throws Exception {
-		//System.out.println("4444444444444444444444");
+		System.out.println("list");
 		List<User> user = userService.selectAll();
 		List<Object> list = new ArrayList<Object>(); 
 		list.addAll(user);		
 		Result r=new Result();
 		r.setError_code("0");
 		r.setData(list);
-		System.out.println("===user list :"+r.getData().toString());
+		System.out.println("===users :"+r.getData());
 		return r;
 	}
 	
